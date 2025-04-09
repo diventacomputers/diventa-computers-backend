@@ -3,6 +3,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 //import routes from './routes/index.js';
+import authRoutes from './routes/auth.routes.js';
+import userRoutes from './routes/user.routes.js';
 import productRoutes from './routes/products.routes.js';
 //import errorHandler from './middlewares/errorHandler';
 
@@ -16,8 +18,17 @@ app.use(express.json());
 
 // Rutas
 //app.use('/api/v1', routes);
+
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+
 // Ruta productos 
 app.use('/api/products', productRoutes);
+
+// Ruta de prueba
+app.get('/', (req, res) => {
+  res.json({ message: 'API REST con Autenticación' });
+});
 // Manejo de errores
 //app.use(errorHandler);
 
