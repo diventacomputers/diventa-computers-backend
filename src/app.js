@@ -11,7 +11,7 @@ import productRoutes from './routes/products.routes.js';
 const app = express();
 
 // Middlewares
-app.use(cors()); // URL de tu frontend
+app.use(cors()); // Habilitar CORS para todas las rutas
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());

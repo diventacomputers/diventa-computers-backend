@@ -43,7 +43,7 @@ const userSchema = new mongoose.Schema({
   },
   telefono: {
     type: String,
-    match: [/^[0-9]{10,15}$/, 'Por favor ingresa un teléfono válido']
+    match: [/^[0-9]{10,15}$/, 'Por favor ingresa un teléfono válido (10-15 dígitos)']
   },
   role: {
     type: String,
