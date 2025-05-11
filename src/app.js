@@ -11,7 +11,12 @@ import productRoutes from './routes/products.routes.js';
 const app = express();
 
 // Middlewares
-app.use(cors()); // Habilitar CORS para todas las rutas
+app.use(cors({
+  origin: [
+    "https://diventacomputers.netlify.app", // dominio Netlify
+    "http://localhost:3000" // Para desarrollo local
+  ]
+})); // Habilitar CORS para todas las rutas
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
