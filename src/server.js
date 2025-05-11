@@ -3,14 +3,14 @@ import app from './app.js';
 import { closeDB } from './config/db.js';
 
 // Configuración directa del puerto
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 const startServer = async () => {
   try {
     await connectDB();
     
-    app.listen(PORT, () => {
-      console.log(`🚀 Servidor DiventaComputers corriendo en http://localhost:${PORT}`);
+    app.listen(port, () => {
+      console.log(`🚀 Servidor DiventaComputers corriendo en http://localhost:${port}`);
     });
 
     // Manejo de cierre
