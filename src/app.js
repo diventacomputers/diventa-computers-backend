@@ -13,7 +13,7 @@ const app = express();
 // Middlewares
 const corsOptions = {
   origin: [
-    'https://diventacomputers.netlify.app', // Reemplaza con tu dominio real
+    'https://diventacomputers.com', // Reemplaza con tu dominio real
     'http://localhost:5173' // Para desarrollo desde el frontend
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE']
