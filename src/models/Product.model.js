@@ -36,6 +36,10 @@ const productSchema = new mongoose.Schema({
     type: String,
     default: 'default-product.jpg'
   },
+  images: {
+    type: [String],
+    default: []
+  },
   specs: {
     type: Map,
     of: String
