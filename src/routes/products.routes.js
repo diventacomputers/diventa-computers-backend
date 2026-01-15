@@ -4,7 +4,8 @@ import {
   getProducts,
   getProductById,
   updateProduct,
-  deactivateProduct
+  deactivateProduct,
+  deleteProduct
 } from '../controllers/products.controller.js';
 
 const router = Router();
@@ -16,6 +17,7 @@ router.get('/:id', getProductById);
 // Rutas protegidas (deberían llevar autenticación después)
 router.post('/', createProduct);
 router.put('/:id', updateProduct);
-router.delete('/:id', deactivateProduct);
+router.patch('/:id/deactivate', deactivateProduct);
+router.delete('/:id', deleteProduct);
 
 export default router;

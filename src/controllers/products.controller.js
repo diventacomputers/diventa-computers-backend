@@ -102,3 +102,24 @@ export const deactivateProduct = async (req, res, next) => {
     next(error);
   }
 };
+
+// Eliminar un producto (borrado físico)
+export const deleteProduct = async (req, res, next) => {
+  try {
+    const product = await Product.findByIdAndDelete(req.params.id);
+
+    if (!product) {
+      return res.status(404).json({
+        success: false,
+        message: 'Producto no encontrado'
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: product
+    });
+  } catch (error) {
+    next(error);
+  }
+};
